@@ -1,8 +1,11 @@
 import React from 'react';
 
 function Header() {
+  var headerStyles = {
+    textAlign: "center"
+  }
   return(
-    <h1>Help Queue!</h1>
+    <h1 style={headerStyles}>Help Queue!</h1>
   );
 }
 

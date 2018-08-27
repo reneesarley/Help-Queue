@@ -22,8 +22,14 @@ var masterTicketList = [
 
 function TicketList(){
 
+  var ticketListStyles = {
+    backgroundColor: '#000080',
+    fontFamily: 'sans-serif',
+    padding: '20px'
+  };
+
   return (
-    <div>
+    <div style={ticketListStyles}>
       <hr/>
       {masterTicketList.map((ticket, index) =>
         <Ticket names={ticket.names}

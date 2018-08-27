@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Ticket(props){
-  var myStyledComponentStyles = {
-    backgroundColor: '#ecf0f1',
+  var ticketStyles = {
+    backgroundColor: '#add8e6',
     fontFamily: 'sans-serif',
-    paddingTop: '50px'
+    paddingTop: '20px',
+    paddingLeft: '10px'
   };
-  
+
   return (
-    <div style={myStyledComponentStyles}>
+    <div style={ticketStyles}>
       <h3>{props.location} - {props.names}</h3>
       <p><em>{props.issue}</em></p>
       <hr/>
