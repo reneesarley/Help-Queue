@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   var headerStyles = {
-    textAlign: "center"
+    textAlign: 'center'
   }
   return(
-    <h1 style={headerStyles}>Help Queue!</h1>
+    <div>
+      <h1 style={headerStyles}>Help Queue!</h1>
+      <p> <Link to='/'>Home</Link> | <Link to='/newticket'>Create New Ticket</Link></p>
+    </div>
   );
 }
 
