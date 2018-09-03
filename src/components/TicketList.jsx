@@ -9,7 +9,6 @@ function TicketList(props){
     fontFamily: 'sans-serif',
     padding: '20px'
   };
-  console.log(props.ticketList);
   return (
     <div style={ticketListStyles}>
       <hr/>
@@ -19,6 +18,7 @@ function TicketList(props){
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
+          onTicketSelection={props.onTicketSelection}
           key={ticket.id}/>
       )}
     </div>
@@ -26,7 +26,8 @@ function TicketList(props){
 }
 TicketList.propTypes = {
   ticketList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
 
 

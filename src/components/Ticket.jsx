@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
 function Ticket(props){
   var ticketStyles = {
@@ -18,17 +17,17 @@ function Ticket(props){
       <hr/>
     </div>;
 
-    if(props.currentRouterPath === '/admin'){
-      return(
-        <div onClick={()=> {alert('clicked on ticket belonging to ' + props.names);}}>{ticketInformation}</div>
-      );
-    } else {
-      return (
-        <div>
-          {ticketInformation}
-        </div>
-      );
-    }
+  if(props.currentRouterPath === '/admin'){
+    return(
+      <div onClick={()=> {props.onTicketSelection({names: props.names, location: props.location, issue: props.issue, formattedWaitTime: props.formattedWaitTime});}}>{ticketInformation}</div>
+    );
+  } else {
+    return (
+      <div>
+        {ticketInformation}
+      </div>
+    );
+  }
 }
 // function displayTimeOpen(timeOpen){
 //   return timeOpen.from(new Moment(), true);
@@ -39,7 +38,8 @@ Ticket.propTypes = {
   location: PropTypes.string.isRequired,
   issue: PropTypes.string.isRequired,
   formattedWaitTime: PropTypes.string.isRequired,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
 
 export default Ticket;
