@@ -2,9 +2,9 @@ import React from 'react';
 import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketControl from './NewTicketControl';
-import NewTicketForm from './NewTicketForm';
 import Error404 from './Error404';
 import Moment from 'moment';
+import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
     console.log('compnentWillUnmount')
     clearInterval(this.waitTimeUpdateTimer);
   }
-  
+
   updateTicketElapsedWaitTime(){
     console.log("check");
     let newMasterTicketList = this.state.masterTicketList.slice();
@@ -50,6 +50,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList}/>} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}/>}/>
           <Route component={Error404} />
         </Switch>
       </div>

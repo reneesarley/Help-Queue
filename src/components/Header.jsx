@@ -11,7 +11,7 @@ function Header() {
     <div>
       <img src={logo} width='30%' height='30%'/>
       <h1 style={headerStyles}>Help Queue!</h1>
-      <p> <Link to='/'>Home</Link> | <Link to='/newticket'>Create New Ticket</Link></p>
+      <p> <Link to='/'>Home</Link> | <Link to='/newticket'>Create New Ticket</Link> | <Link to='/admin'>Admin</Link></p>
     </div>
   );
 }
