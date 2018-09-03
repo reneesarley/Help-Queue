@@ -19,9 +19,9 @@ function Ticket(props){
     </div>
   );
 }
-function displayTimeOpen(timeOpen){
-  return timeOpen.from(new Moment(), true);
-}
+// function displayTimeOpen(timeOpen){
+//   return timeOpen.from(new Moment(), true);
+// }
 
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,

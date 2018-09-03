@@ -18,14 +18,16 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    this.waitTimeUpdateTimer = setInterval(() =>     this.updateTicketElapsedWaitTime(), 5000
+    console.log('componentDidMount')
+    this.waitTimeUpdateTimer = setInterval(() =>     this.updateTicketElapsedWaitTime(), 60000
     );
   }
 
   compnentWillUnmount(){
+    console.log('compnentWillUnmount')
     clearInterval(this.waitTimeUpdateTimer);
   }
-
+  
   updateTicketElapsedWaitTime(){
     console.log("check");
     let newMasterTicketList = this.state.masterTicketList.slice();
@@ -36,6 +38,7 @@ class App extends React.Component {
 
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true)
     newMasterTicketList.push(newTicket);
     this.setState({masterTicketList: newMasterTicketList});
   }
