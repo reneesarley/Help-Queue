@@ -1,4 +1,4 @@
-import ticketListReducer from './reducers/ticket-list-reducer';
+import ticketListReducer from '../src/reducers/ticket-list-reducer';
 
 
 
