@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import { connect } from 'react-redux';
 
 function NewTicketForm (props){
   let _names = null;
@@ -23,7 +24,6 @@ function NewTicketForm (props){
         <button type='submit'>Help!</button>
       </form>
     </div>
-
   );
 
 }
@@ -32,5 +32,4 @@ NewTicketForm.propTypes = {
   onNewTicketCreation: PropTypes.func
 };
 
-
-export default NewTicketForm;
+export default connect()(NewTicketForm);

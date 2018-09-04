@@ -2,10 +2,13 @@
 <head>
   <meta charset="utf-8">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
   <body>
-    <% if (htmlWebpackPlugin.options.appMountId) { %>
-      <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-    <% } %>
+    <div class='container'>
+      <% if (htmlWebpackPlugin.options.appMountId) { %>
+        <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+      <% } %>
+    </div>
   </body>
 </html>
